@@ -3,7 +3,7 @@
 # Script By Hokage Legend
 # =========================================
 # Quick Setup | Script Setup Manager
-# Edition : Stable Edition Alpha3 1.0
+# Edition : Stable Edition vpnpremium 1.0
 # Auther  : Hokage Legend
 # (C) Copyright 2023
 # =========================================
@@ -15,22 +15,12 @@ rm -rf slowdns.sh
 rm -rf udp.sh
 rm -rf vpn.sh
 rm -rf openvpn.sh
-rm -rf log-install.txt
-rm -rf /usr/bin/usernew
-rm -rf /usr/bin/trial
-rm -rf /root/domain
-echo "\e[1;32m Update Menu.. \e[0m"
-sleep 1
-wget -q -O /usr/bin/usernew https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/ssh/usernew.sh
-wget -q -O /usr/bin/trial https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/ssh/trial.sh
 echo "\e[1;32m Proses Download Script Slowdns.. \e[0m"
-wget https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/slowdns//slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns//slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 sleep 1
 echo "\e[1;32m Proses Download Script OpenVPN.. \e[0m"
-wget https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/openvpn/openvpn.sh && chmod +x openvpn.sh && ./openvpn.sh
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/openvpn/openvpn.sh && chmod +x openvpn.sh && ./openvpn.sh
 sleep 1
-chmod +x /usr/bin/usernew
-chmod +x /usr/bin/trial
 rm -rf /root/udp
 mkdir -p /root/udp
 # install udp-custom
@@ -66,7 +56,7 @@ clear
 echo "\e[1;32m Please Waiting Proses Downloading Default Config UdpCustom.. \e[0m"
 sleep 1
 clear
-wget -q --show-progress --load-cookies /tmp/cookies.txt "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/config.json" -O /root/udp/config.json && rm -rf /tmp/cookies.txt
+wget -q --show-progress --load-cookies /tmp/cookies.txt "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/config.json" -O /root/udp/config.json && rm -rf /tmp/cookies.txt
 chmod 644 /root/udp/config.json
 
 if [ -z "$1" ]; then
