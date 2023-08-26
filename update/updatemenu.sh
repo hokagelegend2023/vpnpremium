@@ -16,10 +16,10 @@ wget -O backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/mai
 wget -O menu-backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/backup/menu-backup.sh"
 wget -O running "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/running.sh"
 wget -O info "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/info.sh" 
-wget -O vpnpremim-update "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremim-update"
+wget -O vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium"
 
 chmod +x info
-chmod +x vpnpremim-update
+chmod +x vpnpremium
 chmod +x restart
 chmod +x addssh
 chmod +x grpcmenu2
