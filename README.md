@@ -129,4 +129,22 @@ apt update && apt install wget -y && wget -qO- -O udp.sh "https://raw.githubuser
 </p> 
 <p align="center"><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%209&message=Stretch&color=purple"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2010&message=Buster&color=purple">
 </P>
-  
+
+
+  #SEBELUM INSTALL DI DEBIAN 9
+  - Ganti repository nya terlebih dahulu  ketikan perintah di bawah
+  - 
+```
+nano /etc/apt/sources.list
+```
+
+Masukan baris berikut di repository :
+
+```
+deb http://http.us.debian.org/debian/ testing non-free contrib main
+```
+
+- Lalu tekan ctrl x
+- ketikan Y lalu enter
+- lakukan update & upgrade seperti biasa
+- Lalu rebot ,setelah rebot install seperti biasa
