@@ -23,7 +23,7 @@ rm nsdomain
 
 read -rp "Masukkan Subdomain Yang Dipakai Host Sekarang: " -e sub
 SUB_DOMAIN=${sub}
-NS_DOMAIN=ns-${SUB_DOMAIN}
+NS_DOMAIN=ns.${SUB_DOMAIN}
 echo $NS_DOMAIN > /root/nsdomain
 
 nameserver=$(cat /root/nsdomain)
