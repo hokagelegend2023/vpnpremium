@@ -1,6 +1,6 @@
 # =========================================
 # Quick Setup | Script Setup Manager
-# Edition : Stable Edition Alpha3 1.0
+# Edition : Stable Edition vpnpremium 1.0
 # Auther  : Hokage Legend
 # (C) Copyright 2023
 # =========================================
@@ -13,21 +13,6 @@ iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
 netfilter-persistent save
 netfilter-persistent reload
 
-cd
-#delete directory
-rm -rf /root/nsdomain
-rm nsdomain
-
-#input nameserver manual to cloudflare
-#read -rp "Masukkan domain: " -e domain
-
-read -rp "Masukkan domain nya saja bukan subdomain Yang Dipakai Host Sekarang: " -e sub
-SUB_DOMAIN=${sub}
-NS_DOMAIN=ns.${SUB_DOMAIN}
-echo $NS_DOMAIN > /root/nsdomain
-
-nameserver=$(cat /root/nsdomain)
-domen=$(cat /etc/xray/domain)
 apt update -y
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
@@ -59,10 +44,10 @@ service sshd restart
 #konfigurasi slowdns
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/slowdns/server.key"
-wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/slowdns/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/slowdns/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/slowdns/sldns-client"
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/server.pub"
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/sldns-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/sldns-client"
 cd
 chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
@@ -70,8 +55,8 @@ chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 
 cd
-#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/slowdn/client-sldns.service"
-#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/slowdn/server-sldns.service"
+#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/client-sldns.service"
+#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/server-sldns.service"
 
 cd
 #install client-sldns.service
