@@ -9,17 +9,17 @@ rm running
 # download menu
 
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/menu/menu.sh" 
-wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/update/updatemenu.sh" 
-wget -O menutheme "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/update/menutheme.sh"
-wget -O backup "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/backup/backup.sh"
-wget -O menu-backup "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/backup/menu-backup.sh"
-wget -O running "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/update/running.sh"
-wget -O info "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/update/info.sh" 
-wget -O alpha3-update "https://raw.githubusercontent.com/hokagelegend2023/update/main/alpha3-update"
+wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/menu/menu.sh" 
+wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/updatemenu.sh" 
+wget -O menutheme "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/menutheme.sh"
+wget -O backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/backup/backup.sh"
+wget -O menu-backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/backup/menu-backup.sh"
+wget -O running "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/running.sh"
+wget -O info "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/info.sh" 
+wget -O vpnpremim-update "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremim-update"
 
 chmod +x info
-chmod +x alpha3-update
+chmod +x vpnpremim-update
 chmod +x restart
 chmod +x addssh
 chmod +x grpcmenu2
