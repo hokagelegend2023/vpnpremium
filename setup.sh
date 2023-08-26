@@ -175,7 +175,9 @@ sleep 3
 mkdir -p /etc/hokagevpn
 mkdir -p /etc/hokagevpn/theme
 mkdir -p /var/lib/hokagevpn-pro >/dev/null 2>&1
-echo "IP=" >> /var/lib/hokagevpn-pro/ipvps.conf
+mkdir -p/etc/v2ray/domain >/dev/null 2>&1
+echo "IP=" >> /var/lib/hokage/ipvps.conf
+
 
 if [ -f "/etc/xray/domain" ]; then
 echo ""
@@ -203,6 +205,7 @@ echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
 echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/xray/scdomain
+echo "IP=" >> /var/lib/hokage/ipvps.conf
 echo "IP=$pp" > /var/lib/hokagevpn-pro/ipvps.conf
 
 #THEME RED
