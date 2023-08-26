@@ -262,6 +262,14 @@ wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/xray/ins
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
+#Instal UDP & Slow Dns
+echo -e "\e[33m-----------------------------------\033[0m"
+echo -e "$BGreen  INSTALL SLOWDNS & UDP             $NC"
+echo -e "\e[33m-----------------------------------\033[0m"
+sleep 0.5
+clear
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/udp.sh && chmod +x udp.sh && ./udp.sh
+clear
 #Instal menu
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen     Install MENU UPDATE           $NC"
