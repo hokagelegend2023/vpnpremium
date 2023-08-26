@@ -99,6 +99,22 @@ else
     status_udp="${RED}OFF${NC}"
 fi
 
+# // SSH L2TP
+l2tp=$( systemctl enable xl2tpd | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $l2tp == "running" ]]; then
+    status_l2tp="${GREEN}ON${NC}"
+else
+    status_l2tp="${RED}OFF${NC}"
+fi
+
+# // SSH PPTP
+l2tp=$( systemctl enable pptpd | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $pptp == "running" ]]; then
+    status_pptp="${GREEN}ON${NC}"
+else
+    status_pptp="${RED}OFF${NC}"
+fi
+
 # // nginx
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $nginx == "running" ]]; then
@@ -217,7 +233,9 @@ echo -e "$COLOR1│$NC [ SSH WS   : ${status_wst} ]    [ XRAY : ${status_xray} ]
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]    [ DROPBEAR : ${status_dropbear} ]  [ Slow DNS : ${status_sldns} ]$COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ RUNNING : ${status_sldns} ]  $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ PPTP : ${status_sldns} ]  $COLOR1│$NC"
+echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ L2TP : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ SSTP : ${status_sldns} ]  $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}"
@@ -226,8 +244,9 @@ echo -e "${COLOR1}│  [02]${NC} • VMESS      [${YELLOW}Menu${NC}]   ${COLOR1}
 echo -e "${COLOR1}│  [03]${NC} • VLESS      [${YELLOW}Menu${NC}]   ${COLOR1}[10]${NC} • UPDATE         [${YELLOW}Menu${NC}]  $COLOR1│$NC"  
 echo -e "${COLOR1}│  [04]${NC} • TROJAN     [${YELLOW}Menu${NC}]   ${COLOR1}[11]${NC} • THEME          [${YELLOW}Menu${NC}]  $COLOR1│$NC"  
 echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • SETTINGS       [${YELLOW}Menu${NC}]  $COLOR1│$NC"
-echo -e "${COLOR1}│  [06]${NC} • INFO       [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • ADD HOST       [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
-echo -e "${COLOR1}│  [07]${NC} • PROGRAM    [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • RENEW CERT     [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
+echo -e "${COLOR1}│  [06]${NC} • SSH-PPTP   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • ADD HOST       [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
+echo -e "${COLOR1}│  [07]${NC} • SSH-L2TP   [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC" 
+echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]                                                            $COLOR1│$NC"      
 if [ "$Isadmin" = "ON" ]; then  
 ressee="menu-ip"
 bottt="menu-bot"
@@ -276,15 +295,15 @@ case $opt in
 03 | 3) clear ; m-vless ;;
 04 | 4) clear ; m-trojan ;;
 05 | 5) clear ; m-ssws ;;
-06 | 6) clear ; info ;;
-06 | 7) clear ; m-system ;;
+06 | 6) clear ; pptpmenu ;;
+06 | 7) clear ; l2tpmenu ;;
 07 | 8) clear ; running ;;
 09 | 9) clear ; menu-backup ;;
 10 | 10) clear ; vpnpremium ;;
 11 | 11) clear ; menutheme ;;
 12 | 12) clear ; m-system ;;
 13 | 13) clear ; m-domain ;;
-14 | 14) clear ; certv2ray ;;
+14 | 14) clear ; info ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
