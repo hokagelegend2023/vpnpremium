@@ -307,6 +307,6 @@ wget -O /usr/bin/addpptp https://raw.githubusercontent.com/hokagelegend2023/vpnp
 wget -O /usr/bin/delpptp https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/ipsec/delpptp.sh && chmod +x /usr/bin/delpptp
 wget -O /usr/bin/renewpptp https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/ipsec/renewpptp.sh && chmod +x /usr/bin/renewpptp
 wget -O /usr/bin/renewl2tp https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/ipsec/renewl2tp.sh && chmod +x /usr/bin/renewl2tp
-touch /var/lib/crot/data-user-l2tp
-touch /var/lib/crot/data-user-pptp
+touch /var/lib/hokage/data-user-l2tp
+touch /var/lib/hokage/data-user-pptp
 rm -f /root/ipsec.sh
