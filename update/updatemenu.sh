@@ -7,6 +7,7 @@ rm running
 rm -rf l2tpmenu
 rm -rf pptpmenu
 rm -rf sstpmenu
+rm -rf vpnpremium
 
 # download menu
 
