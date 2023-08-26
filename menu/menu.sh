@@ -167,9 +167,9 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/alpha3-update "https://raw.githubusercontent.com/hokagelegend2023/update/main/alpha3-update" && chmod +x /root/alpha3-update
+wget -q -O /root/vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium" && chmod +x /root/vpnpremium
 sleep 2
-./alpha3-update
+./vpnpremium
 sleep 5
 rm /root/alpha3-update
 rm /opt/.ver
@@ -280,7 +280,7 @@ case $opt in
 06 | 7) clear ; m-system ;;
 07 | 8) clear ; running ;;
 09 | 9) clear ; menu-backup ;;
-10 | 10) clear ; alpha3-update ;;
+10 | 10) clear ; vpnpremium ;;
 11 | 11) clear ; menutheme ;;
 12 | 12) clear ; m-system ;;
 13 | 13) clear ; m-domain ;;
