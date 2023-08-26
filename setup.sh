@@ -214,18 +214,6 @@ cd
 rm -rf /root/nsdomain
 rm nsdomain
 
-#input nameserver manual to cloudflare
-#read -rp "Masukkan domain: " -e domain
-
-yellow "Masukin Domain Saja Bukan Subdomain"
-echo " "
-read -rp "Masukkan domain nya saja bukan subdomain Yang Dipakai Host Sekarang: " -e sub
-SUB_DOMAIN=${sub}
-NS_DOMAIN=ns.${SUB_DOMAIN}
-echo $NS_DOMAIN > /root/nsdomain
-
-nameserver=$(cat /root/nsdomain)
-domen=$(cat /etc/xray/domain)
 #THEME RED
 cat <<EOF>> /etc/hokagevpn/theme/red
 BG : \E[40;1;41m
@@ -282,6 +270,19 @@ wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/xray/ins
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
+sleep 0.5
+#input nameserver manual to cloudflare
+#read -rp "Masukkan domain: " -e domain
+
+yellow "Masukin Domain Saja Bukan Subdomain"
+echo " "
+read -rp "Masukkan domain nya saja bukan subdomain Yang Dipakai Host Sekarang: " -e sub
+SUB_DOMAIN=${sub}
+NS_DOMAIN=ns.${SUB_DOMAIN}
+echo $NS_DOMAIN > /root/nsdomain
+sleep 0.5
+nameserver=$(cat /root/nsdomain)
+domen=$(cat /etc/xray/domain)
 #Instal UDP & Slow Dns
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen  INSTALL SLOWDNS & UDP             $NC"
