@@ -12,7 +12,6 @@
 - Tidak cocok di gunakan untuk UBUNTU 22.0 Banyak Bug Error
 <br>
 
-# Cloudflare settings for those who have their own Domain, you can check at folder [image](https://github.com/givpn/AutoScriptXray/tree/master/image) to display other settings
 <br>
 - SSL/TLS : FULL<br>
 - SSL/TLS Recommender : OFF<br>
@@ -23,7 +22,7 @@
 <br>
 
 # Pointing
-![Pointing](https://raw.githubusercontent.com/givpn/AutoScriptXray/master/image/pointing.png)
+
 
 ## Service & Port:
 <br>
@@ -89,8 +88,6 @@ apt update && apt install wget -y && wget -q -O /usr/bin/ins-helium "https://raw
 ```
 apt update && apt install wget -y && wget -qO- -O udp.sh "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/udp-custom/udp.sh" && chmod +x udp.sh && ./udp.sh
 ```
-- NS Pointing
-![Service Status](https://raw.githubusercontent.com/givpn/AutoScriptXray/master/udp-custom/slowdns/nspointing.png)
 
 
 
