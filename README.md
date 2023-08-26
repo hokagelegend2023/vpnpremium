@@ -131,7 +131,8 @@ apt update && apt install wget -y && wget -qO- -O udp.sh "https://raw.githubuser
 </P>
 
 
-  #SEBELUM INSTALL DI DEBIAN 9
+  # SEBELUM INSTALL DI DEBIAN 9
+
   - Ganti repository nya terlebih dahulu  ketikan perintah di bawah
   - 
 ```
