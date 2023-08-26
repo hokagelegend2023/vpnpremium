@@ -209,7 +209,23 @@ echo "$pp" > /etc/xray/scdomain
 echo "$pp" > /etc/v2ray/domain
 echo "IP=" >> /var/lib/hokage/ipvps.conf
 echo "IP=$pp" > /var/lib/hokagevpn-pro/ipvps.conf
+cd
+#delete directory
+rm -rf /root/nsdomain
+rm nsdomain
 
+#input nameserver manual to cloudflare
+#read -rp "Masukkan domain: " -e domain
+
+yellow "Masukin Domain Saja Bukan Subdomain"
+echo " "
+read -rp "Masukkan domain nya saja bukan subdomain Yang Dipakai Host Sekarang: " -e sub
+SUB_DOMAIN=${sub}
+NS_DOMAIN=ns.${SUB_DOMAIN}
+echo $NS_DOMAIN > /root/nsdomain
+
+nameserver=$(cat /root/nsdomain)
+domen=$(cat /etc/xray/domain)
 #THEME RED
 cat <<EOF>> /etc/hokagevpn/theme/red
 BG : \E[40;1;41m
