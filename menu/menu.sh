@@ -100,7 +100,7 @@ else
 fi
 
 # // SSH L2TP
-l2tp=$( systemctl enable xl2tpd | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+l2tp=$( systemctl status xl2tpd | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $l2tp == "running" ]]; then
     status_l2tp="${GREEN}ON${NC}"
 else
@@ -108,7 +108,7 @@ else
 fi
 
 # // SSH PPTP
-l2tp=$( systemctl enable pptpd | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+l2tp=$( systemctl status pptpd | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $pptp == "running" ]]; then
     status_pptp="${GREEN}ON${NC}"
 else
@@ -131,7 +131,7 @@ else
     status_xray="${RED}OFF${NC}"
 fi
 
-# // SSH Websocket Proxy
+# // SSH Slow Dns
 sldns=$( systemctl status server-sldns | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $sldns == "running" ]]; then
     status_sldns="${GREEN}ON${NC}"
