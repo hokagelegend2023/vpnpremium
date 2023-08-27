@@ -261,8 +261,8 @@ echo -e "${COLOR1}│  [03]${NC} • VLESS      [${YELLOW}Menu${NC}]   ${COLOR1}
 echo -e "${COLOR1}│  [04]${NC} • TROJAN     [${YELLOW}Menu${NC}]   ${COLOR1}[11]${NC} • THEME          [${YELLOW}Menu${NC}]  $COLOR1│$NC"  
 echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • SETTINGS       [${YELLOW}Menu${NC}]  $COLOR1│$NC"
 echo -e "${COLOR1}│  [06]${NC} • SSH-PPTP   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • ADD HOST       [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
-echo -e "${COLOR1}│  [07]${NC} • SSH-L2TP   [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC" 
-echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]                                 $COLOR1│$NC"      
+echo -e "${COLOR1}│  [07]${NC} • SSH-L2TP   [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • WIREGUARD      [${YELLOW}Menu${NC}]  $COLOR1│$NC" 
+echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]   ${COLOR1}[16]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
 if [ "$Isadmin" = "ON" ]; then  
 ressee="menu-ip"
 bottt="menu-bot"
@@ -319,7 +319,9 @@ case $opt in
 11 | 11) clear ; menutheme ;;
 12 | 12) clear ; m-system ;;
 13 | 13) clear ; m-domain ;;
-14 | 14) clear ; info ;;
+14 | 14) clear ; wgmenu ;;
+15 | 15) clear ; sstpmenu ;;
+16 | 16) clear ; info ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;

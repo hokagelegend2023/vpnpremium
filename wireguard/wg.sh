@@ -2,7 +2,7 @@
 # Debian 9 & 10 64bit
 # Ubuntu 18.04 & 20.04 bit
 # Centos 7 & 8 64bit 
-# Mod By SL
+# Mod By Hokage Legend
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -26,8 +26,7 @@ echo -e "${NC}${LIGHT}Fuck You!!"
 exit 0
 fi
 # ==================================================
-# Link Hosting Kalian
-fisabiliyusri="raw.githubusercontent.com/fisabiliyusri/Mantap/main/wireguard"
+
 
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -45,8 +44,8 @@ if [[ -e /etc/wireguard/params ]]; then
 	echo -e "${Info} WireGuard sudah diinstal, silahkan ketik addwg untuk menambah client."
 	exit 1
 fi
-
-echo -e "${Info} Wireguard Script Mod By SL"
+                                                           
+echo -e "${Info} Wireguard Script By Hokage Legend"
 # Detect public IPv4 address and pre-fill for the user
 
 # Detect public interface and pre-fill for the user
