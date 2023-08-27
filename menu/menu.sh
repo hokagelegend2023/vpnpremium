@@ -116,7 +116,7 @@ else
 fi
 
 # // SSH SSTP
-sstp=$( systemctl enable accel-ppp | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+sstp=$( systemctl status accel-ppp | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $pptp == "running" ]]; then
     status_sstp="${GREEN}ON${NC}"
 else

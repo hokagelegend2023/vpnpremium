@@ -19,8 +19,9 @@ echo -e " [\e[36m10\e[0m] Restart WEBSOCKET"
 echo -e " [\e[36m11\e[0m] Restart Trojan Go"
 echo -e " [\e[36m12\e[0m] Restart UDP-Costum"
 echo -e " [\e[36m13\e[0m] Restart SlowDns"
-echo -e " [\e[36m13\e[0m] Restart PPTP"
-echo -e " [\e[36m13\e[0m] Restart L2TP"
+echo -e " [\e[36m14\e[0m] Restart PPTP"
+echo -e " [\e[36m15\e[0m] Restart L2TP"
+echo -e " [\e[36m16\e[0m] Restart SSTP"
 echo -e ""
 echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
 echo -e   ""
@@ -59,10 +60,11 @@ case $Restart in
                 sleep 0.5
                 systemctl restart client-sldns
                 systemctl restart server-sldns
-                echo -e "[ \033[32mok\033[0m ] Restarting IPSEC PPTP L2TP (via systemctl) "
+                echo -e "[ \033[32mok\033[0m ] Restarting IPSEC PPTP L2TP SSTP (via systemctl) "
                 sleep 0.5
 				systemctl restart pptpd
                 systemctl restart xl2tpd
+				systemctl restart accel-ppp
                 echo -e "[ \033[32mok\033[0m ] Restarting badvpn Service (via systemctl) "
                 sleep 0.5
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
@@ -332,7 +334,26 @@ case $Restart in
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
                 restart
-                ;;       				
+                ;;       
+                16)
+                clear
+                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\E[0;100;33m         • RESTART MENU •          \E[0m"
+                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
+                sleep 1
+                echo -e "[ \033[32mok\033[0m ] Restarting SSTP (via systemctl) "
+                sleep 0.5
+                systemctl enable accel-ppp
+                sleep 0.5
+                echo -e "[ \033[32mInfo\033[0m ] SSTP RESTART"
+                echo ""
+                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo ""
+                read -n 1 -s -r -p "Press any key to back on system menu"
+                restart
+                ;;       		
                 0)
                 m-system
                 exit
