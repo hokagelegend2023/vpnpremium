@@ -22,6 +22,7 @@ echo -e " [\e[36m13\e[0m] Restart SlowDns"
 echo -e " [\e[36m14\e[0m] Restart PPTP"
 echo -e " [\e[36m15\e[0m] Restart L2TP"
 echo -e " [\e[36m16\e[0m] Restart SSTP"
+echo -e " [\e[36m17\e[0m] Restart WIREGUARD"
 echo -e ""
 echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
 echo -e   ""
@@ -60,11 +61,12 @@ case $Restart in
                 sleep 0.5
                 systemctl restart client-sldns
                 systemctl restart server-sldns
-                echo -e "[ \033[32mok\033[0m ] Restarting IPSEC PPTP L2TP SSTP (via systemctl) "
+                echo -e "[ \033[32mok\033[0m ] Restarting IPSEC PPTP L2TP SSTP WIREGUARD (via systemctl) "
                 sleep 0.5
 				systemctl restart pptpd
                 systemctl restart xl2tpd
 				systemctl restart accel-ppp
+				systemctl restart wg-quick@wg0
                 echo -e "[ \033[32mok\033[0m ] Restarting badvpn Service (via systemctl) "
                 sleep 0.5
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
@@ -353,7 +355,26 @@ case $Restart in
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
                 restart
-                ;;       		
+                ;; 
+                17)
+                clear
+                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\E[0;100;33m         • RESTART MENU •          \E[0m"
+                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
+                sleep 1
+                echo -e "[ \033[32mok\033[0m ] Restarting WIREGUARD (via systemctl) "
+                sleep 0.5
+                systemctl restart wg-quick@wg0
+                sleep 0.5
+                echo -e "[ \033[32mInfo\033[0m ] WIREGUARD RESTART"
+                echo ""
+                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo ""
+                read -n 1 -s -r -p "Press any key to back on system menu"
+                restart
+                ;; 				
                 0)
                 m-system
                 exit

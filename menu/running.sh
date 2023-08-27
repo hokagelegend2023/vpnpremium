@@ -61,6 +61,7 @@ sldns=$(systemctl status server-sldns | grep Active | awk '{print $3}' | cut -d 
 udp=$(systemctl status udp-custom | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 pptp=$(systemctl status pptpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 l2tp=$(systemctl status xl2tpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+wg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"
 #ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)
@@ -126,6 +127,13 @@ if [[ $pptp == "running" ]]; then
   status_pptp=" ${GREEN}Running ${NC}( No Error )"
 else
   status_pptp="${RED}  Not Running ${NC}  ( Error )"
+fi
+
+# STATUS SSH WIREGUARD
+if [[ $wg == "running" ]]; then
+  status_wg=" ${GREEN}Running ${NC}( No Error )"
+else
+  status_wg="${RED}  Not Running ${NC}  ( Error )"
 fi
 
 # STATUS SERVICE SLOWDNS
@@ -390,5 +398,6 @@ echo -e "❇️ XRAYS Vless None TLS    :$status_nontls_vless"
 echo -e "❇️ Shadowsocks-OBFS HTTP   :$status_tls_v2ray"
 echo -e "❇️ SSH L2TP                :$status_l2tp"
 echo -e "❇️ SSH PPTP                :$status_pptp"
+echo -e "❇️ SSH WIREGUARD           :$status_wg"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
