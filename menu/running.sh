@@ -115,6 +115,13 @@ else
   status_openvpn="${RED}  Not Running ${NC}  ( Error )"
 fi
 
+# STATUS SERVICE OPENVPN
+if [[ $wg == "active" ]]; then
+  status_wg=" ${GREEN}Running ${NC}( No Error )"
+else
+  status_wg="${RED}  Not Running ${NC}  ( Error )"
+fi
+
 # STATUS SSH L2TP
 if [[ $l2tp == "running" ]]; then
   status_l2tp=" ${GREEN}Running ${NC}( No Error )"
