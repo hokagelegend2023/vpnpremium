@@ -1,3 +1,6 @@
+<br>
+<img src="https://github.com/hokagelegend2023/vpnpremium/blob/a0e672ed0ac2d0bc98776979e7af4c708962dff8/menu%20premium.jpg">
+</br>
 
   
 # Required VPS is still fresh (MUST) / have never installed anything
