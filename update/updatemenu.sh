@@ -18,7 +18,7 @@ wget -O menutheme "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/
 wget -O backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/backup/backup.sh"
 wget -O menu-backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/backup/menu-backup.sh"
 wget -O running "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/running.sh"
-wget -O info "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/info.sh" 
+wget -O info "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/update/info.sh" 
 wget -O vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium"
 wget -O l2tpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/l2tpmenu.sh"
 wget -O pptpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/pptpmenu.sh"
