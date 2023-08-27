@@ -61,8 +61,8 @@ case $Restart in
                 systemctl restart server-sldns
                 echo -e "[ \033[32mok\033[0m ] Restarting IPSEC PPTP L2TP (via systemctl) "
                 sleep 0.5
-				systemctl status pptpd
-                systemctl status xl2tpd
+				systemctl restart pptpd
+                systemctl restart xl2tpd
                 echo -e "[ \033[32mok\033[0m ] Restarting badvpn Service (via systemctl) "
                 sleep 0.5
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
@@ -305,7 +305,7 @@ case $Restart in
                 sleep 1
                 echo -e "[ \033[32mok\033[0m ] Restarting SlowDns (via systemctl) "
                 sleep 0.5
-                systemctl status pptpd
+                systemctl restart pptpd
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] RSTART PPTP"
                 echo ""
@@ -324,7 +324,7 @@ case $Restart in
                 sleep 1
                 echo -e "[ \033[32mok\033[0m ] Restarting L2TP (via systemctl) "
                 sleep 0.5
-                systemctl status xl2tpd
+                systemctl restart xl2tpd
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] L2TP RESTART"
                 echo ""
