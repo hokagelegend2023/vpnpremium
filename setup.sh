@@ -80,9 +80,9 @@ mkdir -p /etc/xray
 
 echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
 sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
+echo -e "[ ${tyblue}NOTES${NC} ] Pemeriksaan HEADER LEwat dulu"
 sleep 2
-echo -e "[ ${green}INFO${NC} ] Checking headers"
+echo -e "[ ${green}INFO${NC} ] Checking headers Tidak Di Aktifkan"
 sleep 1
 
 secs_to_human() {
