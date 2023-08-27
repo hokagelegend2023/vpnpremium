@@ -251,7 +251,7 @@ echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]    [ DROPBEAR : ${status_dr
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ PPTP : ${status_pptp} ]    $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ L2TP : ${status_l2tp} ]        [ WIREGUARD : ${status_wg} ] [ SSTP : ${status_sstp} ] $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ L2TP : ${status_l2tp} ]        [ WIREGUARD : ${status_wg} ] [ SSTP : ${status_sstp} ]   $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}"
