@@ -227,6 +227,23 @@ clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 sleep 0.5
+
+#install ssh IPSEC
+echo -e "\e[33m-----------------------------------\033[0m"
+echo -e "$BGreen      Install SSH IPSEC           $NC"
+echo -e "\e[33m-----------------------------------\033[0m"
+sleep 0.5
+clear
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/ipsec/ipsec.sh && chmod +x ipsec.sh && ./ipsec.sh
+
+#install ssh IPSEC
+echo -e "\e[33m-----------------------------------\033[0m"
+echo -e "$BGreen      Install SSH SSTP           $NC"
+echo -e "\e[33m-----------------------------------\033[0m"
+sleep 0.5
+clear
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sstp/sstp.sh && chmod +x ipsec.sh && ./sstp.sh
+
 #input nameserver manual to cloudflare
 #read -rp "Masukkan domain: " -e domain
 
