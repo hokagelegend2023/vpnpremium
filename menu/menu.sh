@@ -233,7 +233,7 @@ echo -e "$COLOR1│$NC [ SSH WS   : ${status_wst} ]    [ XRAY : ${status_xray} ]
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]    [ DROPBEAR : ${status_dropbear} ]  [ Slow DNS : ${status_sldns} ]$COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ PPTP : ${status_sldns} ]   $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ PPTP : ${status_sldns} ]    $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1│$NC [ L2TP : ${status_udp} ]     [ GRPC : ${status_xray} ]         [ SSTP : ${status_sldns} ]    $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
@@ -246,7 +246,7 @@ echo -e "${COLOR1}│  [04]${NC} • TROJAN     [${YELLOW}Menu${NC}]   ${COLOR1}
 echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • SETTINGS       [${YELLOW}Menu${NC}]  $COLOR1│$NC"
 echo -e "${COLOR1}│  [06]${NC} • SSH-PPTP   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • ADD HOST       [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
 echo -e "${COLOR1}│  [07]${NC} • SSH-L2TP   [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC" 
-echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]                                     $COLOR1│$NC"      
+echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]                                  $COLOR1│$NC"      
 if [ "$Isadmin" = "ON" ]; then  
 ressee="menu-ip"
 bottt="menu-bot"
