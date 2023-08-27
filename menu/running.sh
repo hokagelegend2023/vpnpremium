@@ -59,6 +59,8 @@ openvpn_service="$(systemctl show openvpn.service --no-page)"
 oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)
 sldns=$(systemctl status server-sldns | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 udp=$(systemctl status udp-custom | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+pptp=$(systemctl status pptpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+l2tp=$(systemctl status xl2tpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 #status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"
 #ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)
@@ -110,6 +112,20 @@ if [[ $oovpn == "active" ]]; then
   status_openvpn=" ${GREEN}Running ${NC}( No Error )"
 else
   status_openvpn="${RED}  Not Running ${NC}  ( Error )"
+fi
+
+# STATUS SSH L2TP
+if [[ $l2tp == "running" ]]; then
+  status_l2tp=" ${GREEN}Running ${NC}( No Error )"
+else
+  status_l2tp="${RED}  Not Running ${NC}  ( Error )"
+fi
+
+# STATUS SSH PPTP
+if [[ $pptp == "running" ]]; then
+  status_pptp=" ${GREEN}Running ${NC}( No Error )"
+else
+  status_pptp="${RED}  Not Running ${NC}  ( Error )"
 fi
 
 # STATUS SERVICE SLOWDNS
@@ -372,5 +388,7 @@ echo -e "❇️ XRAYS Vmess None TLS    :$status_nontls_v2ray"
 echo -e "❇️ XRAYS Vless TLS         :$status_tls_vless"
 echo -e "❇️ XRAYS Vless None TLS    :$status_nontls_vless"
 echo -e "❇️ Shadowsocks-OBFS HTTP   :$status_tls_v2ray"
+echo -e "❇️ SSH L2TP                :$status_l2tp"
+echo -e "❇️ SSH PPTP                :$status_pptp"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
