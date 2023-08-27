@@ -242,7 +242,7 @@ echo -e "$BGreen      Install SSH SSTP           $NC"
 echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
-wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sstp/sstp.sh && chmod +x ipsec.sh && ./sstp.sh
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sstp/sstp.sh && chmod +x sstp.sh && ./sstp.sh
 
 #input nameserver manual to cloudflare
 #read -rp "Masukkan domain: " -e domain
