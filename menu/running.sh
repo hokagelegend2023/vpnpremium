@@ -235,12 +235,6 @@ else
    status_virus_trojan="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-# STATUS SERVICE WIREGUARD
-if [[ $swg == "active" ]]; then
-  status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-  status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
-fi
 
 # Status Service Trojan GO
 if [[ $strgo == "active" ]]; then
