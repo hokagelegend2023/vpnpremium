@@ -246,7 +246,7 @@ echo -e "${COLOR1}│  [04]${NC} • TROJAN     [${YELLOW}Menu${NC}]   ${COLOR1}
 echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • SETTINGS       [${YELLOW}Menu${NC}]  $COLOR1│$NC"
 echo -e "${COLOR1}│  [06]${NC} • SSH-PPTP   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • ADD HOST       [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
 echo -e "${COLOR1}│  [07]${NC} • SSH-L2TP   [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC" 
-echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]                                  $COLOR1│$NC"      
+echo -e "${COLOR1}│  [015]${NC}• SSH-SSTP   [${YELLOW}Menu${NC}]                                 $COLOR1│$NC"      
 if [ "$Isadmin" = "ON" ]; then  
 ressee="menu-ip"
 bottt="menu-bot"
