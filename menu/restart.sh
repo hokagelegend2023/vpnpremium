@@ -59,6 +59,10 @@ case $Restart in
                 sleep 0.5
                 systemctl restart client-sldns
                 systemctl restart server-sldns
+                echo -e "[ \033[32mok\033[0m ] Restarting IPSEC PPTP L2TP (via systemctl) "
+                sleep 0.5
+				systemctl status pptpd
+                systemctl status xl2tpd
                 echo -e "[ \033[32mok\033[0m ] Restarting badvpn Service (via systemctl) "
                 sleep 0.5
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
