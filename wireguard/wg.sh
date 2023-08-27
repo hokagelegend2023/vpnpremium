@@ -114,7 +114,7 @@ cd /usr/bin
 wget -O addwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/wiregurad/addwg.sh"
 wget -O delwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/wiregurad/delwg.sh"
 wget -O renewwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/wiregurad/renewwg.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/menu/wgmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/wgmenu.sh"
 chmod +x wgmenu
 chmod +x addwg
 chmod +x delwg
