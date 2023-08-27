@@ -117,12 +117,19 @@ fi
 
 # // SSH SSTP
 sstp=$( systemctl status accel-ppp | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $pptp == "running" ]]; then
+if [[ $sstp == "running" ]]; then
     status_sstp="${GREEN}ON${NC}"
 else
     status_sstp="${RED}OFF${NC}"
 fi
 
+# // SSH WIREGUARD
+wg=$( systemctl start "wg-quick@wg0" | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $wg == "running" ]]; then
+    status_wg="${GREEN}ON${NC}"
+else
+    status_wg="${RED}OFF${NC}"
+fi
 
 # // nginx
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
@@ -244,7 +251,7 @@ echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]    [ DROPBEAR : ${status_dr
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ PPTP : ${status_pptp} ]    $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ L2TP : ${status_l2tp} ]        [ GRPC : ${status_xray} ]      [ SSTP : ${status_sstp} ]    $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ L2TP : ${status_l2tp} ]        [ WIREGUARD : ${status_wg} ]   [ SSTP : ${status_sstp} ]   $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}"
