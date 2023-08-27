@@ -124,7 +124,7 @@ else
 fi
 
 # // SSH WIREGUARD
-wg=$( systemctl start "wg-quick@wg0" | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+wg=$( systemctl status "wg-quick@wg0" | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $wg == "running" ]]; then
     status_wg="${GREEN}ON${NC}"
 else
