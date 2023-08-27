@@ -251,7 +251,7 @@ echo -e "$COLOR1│$NC [ SW-SHOCK : ${status_xray} ]    [ DROPBEAR : ${status_dr
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1│$NC [ UDP-COSTUM : ${status_udp} ]  [ GRPC : ${status_xray} ]      [ PPTP : ${status_pptp} ]    $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
-echo -e "$COLOR1│$NC [ L2TP : ${status_l2tp} ]        [ WIREGUARD : ${status_sstp} ] [ SSTP : ${status_sstp} ]   $COLOR1│$NC"
+echo -e "$COLOR1│$NC [ L2TP : ${status_l2tp} ]        [ WIREGUARD : ${status_sstp} ] [ SSTP : ${status_sstp} ]    $COLOR1│$NC"
 echo -e "$COLOR1│$NC                                                          $COLOR1│$NC"
 echo -e "$COLOR1└──────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────────┐${NC}"
@@ -262,7 +262,7 @@ echo -e "${COLOR1}│  [04]${NC} • TROJAN     [${YELLOW}Menu${NC}]   ${COLOR1}
 echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • SETTINGS       [${YELLOW}Menu${NC}]  $COLOR1│$NC"
 echo -e "${COLOR1}│  [06]${NC} • SSH-PPTP   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • ADD HOST       [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
 echo -e "${COLOR1}│  [07]${NC} • SSH-L2TP   [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • WIREGUARD      [${YELLOW}Menu${NC}]  $COLOR1│$NC" 
-echo -e "${COLOR1}│  [15]${NC}• SSH-SSTP    [${YELLOW}Menu${NC}]   ${COLOR1}[16]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
+echo -e "${COLOR1}│  [15]${NC} • SSH-SSTP   [${YELLOW}Menu${NC}]   ${COLOR1}[16]${NC} • INFO           [${YELLOW}Menu${NC}]  $COLOR1│$NC"      
 if [ "$Isadmin" = "ON" ]; then  
 ressee="menu-ip"
 bottt="menu-bot"
