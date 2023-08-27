@@ -243,7 +243,13 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sstp/sstp.sh && chmod +x sstp.sh && ./sstp.sh
-
+#install ssh WIREGUARD
+echo -e "\e[33m-----------------------------------\033[0m"
+echo -e "$BGreen      Install SSH WIREGUARD          $NC"
+echo -e "\e[33m-----------------------------------\033[0m"
+sleep 0.5
+clear
+wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
 #input nameserver manual to cloudflare
 #read -rp "Masukkan domain: " -e domain
 
