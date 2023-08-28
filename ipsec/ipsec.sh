@@ -296,7 +296,7 @@ done
 bigecho "Starting services..."
 sysctl -e -q -p
 chmod 600 /etc/ipsec.secrets* /etc/ppp/chap-secrets* /etc/ipsec.d/passwd*
-
+echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.conf
 mkdir -p /run/pluto
 service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
