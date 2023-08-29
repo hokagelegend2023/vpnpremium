@@ -162,3 +162,7 @@ deb http://http.us.debian.org/debian/ testing non-free contrib main
   sudo sed -i 's|\(ExecStart=/etc/slowdns/sldns-server -udp :5300 -privkey-file /etc/slowdns/server.key\)\(.*\)|\1 -nameserver example.com:53\2|' /etc/systemd/system/server-sldns.service
 ```
 - lalu restart all service
+
+# TES UBUNTU 22
+- sshws tidak aktif
+- xray berjalan dengan normal
