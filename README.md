@@ -153,5 +153,7 @@ deb http://http.us.debian.org/debian/ testing non-free contrib main
 - lakukan update & upgrade seperti biasa
 - Lalu rebot ,setelah rebot install seperti biasa
 
+  # Setelah install harap ketikk 100 untuk update pertama
+
 # Lulus TES DEBIAN 11.07
 - DENGAN CATATAN SSTP HARUS DI CONFIGURASI ULANG
