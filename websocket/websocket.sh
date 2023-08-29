@@ -1,8 +1,8 @@
 #!/bin/bash
 # =========================================
 # Quick Setup | Script Setup Manager
-# Edition : Stable Edition 1.0
-# Auther  : givpn
+# Edition : Premium Edision
+# Auther  : Hokage Legend
 # (C) Copyright 2023
 # =========================================
 clear
@@ -12,8 +12,7 @@ echo Please wait...
 sleep 2
 cd
 
-# // GIT USER
-GitUser="hokagelegend2023"
+
 
 # // SYSTEM WEBSOCKET HTTPS 443
 cat <<EOF> /etc/systemd/system/ws-https.service
