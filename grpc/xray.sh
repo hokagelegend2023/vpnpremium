@@ -39,7 +39,7 @@ chmod +x /usr/local/bin/xray
 mkdir -p /var/log/xray/
 #
 wget -q -O /usr/local/bin/geosite.dat "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/grpc/geosite.dat"
-wget -q -O /usr/local/bin/geoip.dat "https://raw.githubusercontent.com/givpn/hokagelegend2023/alpha3/main/grpc/geoip.dat"
+wget -q -O /usr/local/bin/geoip.dat "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/grpc/geoip.dat"
 
 #
 cat > /etc/xray/vmessgrpc.json << END
@@ -316,10 +316,10 @@ systemctl enable vless-grpc
 systemctl restart vless-grpc
 #
 cd /usr/bin
-wget -O addgrpc "https://raw.githubusercontent.com/givpn/hokagelegend2023/alpha3/main/grpc/addgrpc.sh"
-wget -O delgrpc "https://raw.githubusercontent.com/givpn/hokagelegend2023/alpha3/main/grpc/delgrpc.sh"
-wget -O renewgrpc "https://raw.githubusercontent.com/givpn/hokagelegend2023/alpha3/main/grpc/renewgrpc.sh"
-wget -O cekgrpc "https://raw.githubusercontent.com/givpn/hokagelegend2023/alpha3/main/grpc/cekgrpc.sh"
+wget -O addgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/grpc/addgrpc.sh"
+wget -O delgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/grpc/delgrpc.sh"
+wget -O renewgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/grpc/renewgrpc.sh"
+wget -O cekgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/grpc/cekgrpc.sh"
 
 chmod +x addgrpc
 chmod +x delgrpc
