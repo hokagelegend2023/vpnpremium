@@ -157,3 +157,8 @@ deb http://http.us.debian.org/debian/ testing non-free contrib main
 
 # Lulus TES DEBIAN 11.07
 - DENGAN CATATAN SSTP HARUS DI CONFIGURASI ULANG
+- jika slow dns tidak aktif maka masukan perintah berikut dan di dalam nya sisipkan nama DOMAIN kamu
+  ```
+  sudo sed -i 's|\(ExecStart=/etc/slowdns/sldns-server -udp :5300 -privkey-file /etc/slowdns/server.key\)\(.*\)|\1 -nameserver example.com:53\2|' /etc/systemd/system/server-sldns.service
+```
+- lalu restart all service
