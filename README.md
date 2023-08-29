@@ -152,3 +152,5 @@ deb http://http.us.debian.org/debian/ testing non-free contrib main
 - ketikan Y lalu enter
 - lakukan update & upgrade seperti biasa
 - Lalu rebot ,setelah rebot install seperti biasa
+
+# Lulus TES DEBIAN 10.07
