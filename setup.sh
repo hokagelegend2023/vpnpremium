@@ -204,10 +204,7 @@ EOF
 cat <<EOF>> /etc/hokagevpn/theme/color.conf
 blue
 EOF
-yellow "Perhatikan NS DOMAIN Nya"
-echo " "
-echo -e "\e[1;32m Success.. \e[0m"
-echo "Silahkan Pointing Type NS $nameserver Dengan Target $domen"
+
 
 #install ssh ovpn
 echo -e "\e[33m-----------------------------------\033[0m"
