@@ -8,6 +8,8 @@ rm -rf l2tpmenu
 rm -rf pptpmenu
 rm -rf sstpmenu
 rm -rf vpnpremium
+rm -rf m-trojan
+rm -rf add-tr
 
 # download menu
 
@@ -23,6 +25,7 @@ wget -O vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/ma
 wget -O l2tpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/l2tpmenu.sh"
 wget -O pptpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/pptpmenu.sh"
 wget -O sstpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/sstpmenu.sh"
+wget -O add-tr "https://raw.githubusercontent.com/hokagelegend2023/alpha3/main/xray/menu-trojan.sh"
 
 chmod +x info
 chmod +x vpnpremium
@@ -52,6 +55,7 @@ chmod +x updatemenu
 chmod +x setmenu
 chmod +x backup
 chmod +x menu-backup
+chmod +x add-tr
 sl-download-info
 #install-sldns
 #install-ss-plugin
