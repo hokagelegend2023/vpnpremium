@@ -40,6 +40,7 @@ service ssh restart
 service sshd restart
 
 #konfigurasi slowdns
+
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
 wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/slowdns/server.key"
@@ -97,7 +98,10 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 END
-
+yellow "Perhatikan NS DOMAIN Nya"
+echo " "
+echo -e "\e[1;32m Success.. \e[0m"
+echo "Silahkan Pointing Type NS $nameserver Dengan Target $domen"
 #permission service slowdns
 cd
 chmod +x /etc/systemd/system/client-sldns.service
