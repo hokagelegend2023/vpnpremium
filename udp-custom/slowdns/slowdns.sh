@@ -7,6 +7,7 @@
 # pewarna hidup
 BGreen='\e[1;32m'
 NC='\e[0m'
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 #setting IPtables
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
@@ -19,11 +20,14 @@ rm nsdomain
 
 #input nameserver manual to cloudflare
 #read -rp "Masukkan domain: " -e domain
-
-read -rp "Masukkan Subdomain Yang Dipakai Host Sekarang: " -e sub
+yellow "Perhatikan NS DOMAIN Nya"
+read -rp "MASUKAN DOMAIN NYA SAJA: " -e sub
 SUB_DOMAIN=${sub}
 NS_DOMAIN=ns.${SUB_DOMAIN}
 echo $NS_DOMAIN > /root/nsdomain
+
+nameserver=$(cat /root/nsdomain)
+domen=$(cat /etc/xray/domain)
 
 apt update -y
 apt install -y python3 python3-dnslib net-tools
@@ -110,10 +114,7 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 END
-yellow "Perhatikan NS DOMAIN Nya"
-echo " "
-echo -e "\e[1;32m Success.. \e[0m"
-echo "Silahkan Pointing Type NS $nameserver Dengan Target $domen"
+
 #permission service slowdns
 cd
 chmod +x /etc/systemd/system/client-sldns.service
@@ -135,5 +136,8 @@ systemctl start server-sldns
 systemctl restart client-sldns
 systemctl restart server-sldns
 
+echo " "
+echo -e "\e[1;32m Success.. \e[0m"
+echo "Silahkan Pointing Type ns.$nameserver Dengan Target $domen"
 sleep 10
 
