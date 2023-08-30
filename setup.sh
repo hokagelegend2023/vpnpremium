@@ -214,7 +214,6 @@ clear
 wget -q https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
-
 #install ssh ovpn
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen      Install SSH Websocket           $NC"
@@ -222,6 +221,9 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+rm ssh-vpn.sh
+clear
+#
 #Instal Xray
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen          Install XRAY              $NC"
@@ -229,11 +231,13 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+rm ins-xray.sh
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+rm insshws.sh
 clear
 sleep 0.5
-
+#
 #install ssh IPSEC
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen      Install SSH IPSEC           $NC"
@@ -241,14 +245,18 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/ipsec/ipsec.sh && chmod +x ipsec.sh && ./ipsec.sh
-
-#install ssh IPSEC
+rm ipsec.sh
+clear
+#
+#install ssh SSTP
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen      Install SSH SSTP           $NC"
 echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/sstp/sstp.sh && chmod +x sstp.sh && ./sstp.sh
+rm sstp.sh
+clear
 #install ssh WIREGUARD
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen      Install SSH WIREGUARD          $NC"
@@ -256,18 +264,8 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/wg.sh && chmod +x wg.sh && ./wg.sh
-#input nameserver manual to cloudflare
-#read -rp "Masukkan domain: " -e domain
-
-yellow "Masukin Domain Saja Bukan Subdomain"
-echo " "
-read -rp "Masukkan domain nya saja bukan subdomain Yang Dipakai Host Sekarang: " -e sub
-SUB_DOMAIN=${sub}
-NS_DOMAIN=ns.${SUB_DOMAIN}
-echo $NS_DOMAIN > /root/nsdomain
-sleep 0.5
-nameserver=$(cat /root/nsdomain)
-domen=$(cat /etc/xray/domain)
+rm wg.sh
+clear
 #Instal UDP & Slow Dns
 echo -e "\e[33m-----------------------------------\033[0m"
 echo -e "$BGreen  INSTALL SLOWDNS & UDP             $NC"
@@ -275,6 +273,7 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/udp-custom/udp.sh && chmod +x udp.sh && ./udp.sh
+rm udp.sh
 clear
 #Instal menu
 echo -e "\e[33m-----------------------------------\033[0m"
@@ -283,6 +282,7 @@ echo -e "\e[33m-----------------------------------\033[0m"
 sleep 0.5
 clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/update/updatemenu.sh && chmod +x updatemenu.sh && ./updatemenu.sh
+rm updatemenu.sh
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
@@ -321,7 +321,7 @@ if [ ! -f "/etc/log-create-shadowsocks.log" ]; then
 echo "Log Shadowsocks Account " > /etc/log-create-shadowsocks.log
 fi
 history -c
-serverV=$( curl -sS https://github.com/hokagelegend2023/ijinpremium/blob/main/versi  )
+serverV=$( curl -sS https://raw.githubusercontent.com/hokagelegend2023/ijinpremium/main/.ver )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
