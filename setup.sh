@@ -205,6 +205,15 @@ cat <<EOF>> /etc/hokagevpn/theme/color.conf
 blue
 EOF
 
+#install ssh ovpn
+echo -e "\e[33m-----------------------------------\033[0m"
+echo -e "$BGreen   Install System Pendukung         $NC"
+echo -e "\e[33m-----------------------------------\033[0m"
+sleep 0.5
+clear
+wget -q https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+rm dependencies.sh
+clear
 
 #install ssh ovpn
 echo -e "\e[33m-----------------------------------\033[0m"
