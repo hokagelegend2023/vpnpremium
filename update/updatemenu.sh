@@ -14,7 +14,7 @@ rm -rf add-tr
 # download menu
 
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/menu/menu.sh" 
+wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/menu.sh" 
 wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/updatemenu.sh" 
 wget -O menutheme "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/update/menutheme.sh"
 wget -O backup "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/backup/backup.sh"
