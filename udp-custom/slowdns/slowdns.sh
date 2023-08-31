@@ -20,6 +20,7 @@ rm nsdomain
 
 #input nameserver manual to cloudflare
 #read -rp "Masukkan domain: " -e domain
+clear
 yellow "Perhatikan NS DOMAIN Nya"
 read -rp "MASUKAN DOMAIN NYA SAJA: " -e sub
 SUB_DOMAIN=${sub}
