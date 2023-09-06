@@ -325,13 +325,14 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}             • VLESS PANEL MENU •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD VLESS      ${COLOR1}[03]${NC} • DELETE VLESS${NC}   $COLOR1│$NC"
-echo -e " $COLOR1│$NC   ${COLOR1}[02]${NC} • RENEW VLESS${NC}    ${COLOR1}[04]${NC} • USER ONLINE    $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD VLESS      ${COLOR1}[04]${NC} • USER ONLINE${NC}    $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[02]${NC} • RENEW VLESS${NC}    ${COLOR1}[05]${NC} • USER LIST      $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[03]${NC} • DELL VLESS${NC}"
 echo -e " $COLOR1│$NC                                              ${NC} $COLOR1│$NC"
 echo -e " $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                  $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
@@ -341,6 +342,7 @@ case $opt in
 02 | 2) clear ; renewvless ;;
 03 | 3) clear ; delvless ;;
 04 | 4) clear ; cekvless ;;
+05 | 5) clear ; cat /etc/log-create-vless.log ; exit ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-vless ;;
 esac
