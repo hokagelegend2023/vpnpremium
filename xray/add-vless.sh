@@ -28,7 +28,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ijinpremium/main/ijin| grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -45,7 +45,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ijinpremium/main/ijin| awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -116,7 +116,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 }
 
 function renewvless(){
@@ -134,7 +134,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 fi
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -151,7 +151,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1───────────────────────────────────────────────────${NC}"
 read -rp "   Input Username : " user
 if [ -z $user ]; then
-m-vless
+menu-vless
 else
 read -p "   Expired (days): " masaaktif
 if [ -z $masaaktif ]; then
@@ -182,7 +182,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 fi
 }
 
@@ -201,7 +201,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 fi
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -215,7 +215,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1───────────────────────────────────────────────────${NC}"
 read -rp "   Input Username : " user
 if [ -z $user ]; then
-m-vless
+menu-vless
 else
 exp=$(grep -wE "^#& $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 sed -i "/^#& $user $exp/,/^},{/d" /etc/xray/config.json
@@ -235,7 +235,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 fi
 }
 
@@ -316,7 +316,7 @@ echo -e "$COLOR1│${NC}              • BONDOWOSO VPN STORE •            $CO
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo "" 
 read -n 1 -s -r -p "   Press any key to back on menu"
-m-vless
+menu-vless
 }
 
 
@@ -342,7 +342,7 @@ case $opt in
 03 | 3) clear ; delvless ;;
 04 | 4) clear ; cekvless ;;
 00 | 0) clear ; menu ;;
-*) clear ; m-vless ;;
+*) clear ; menu-vless ;;
 esac
 
        
