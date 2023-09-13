@@ -288,7 +288,7 @@ clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}            • CREATE VLESS USER •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1│${NC} Remarks       : ${user}" | tee -a /etc/log-create-vless.log 
 echo -e "$COLOR1│${NC} Expired On    : $exp" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1│${NC} Domain        : ${domain}" | tee -a /etc/log-create-vless.log
@@ -300,7 +300,7 @@ echo -e "$COLOR1│${NC} Network       : ws"
 echo -e "$COLOR1│${NC} Path          : /vless" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1│${NC} Path WSS      : wss://who.int/vless" 
 echo -e "$COLOR1│${NC} Path          : vless-grpc" | tee -a /etc/log-create-vless.log
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} Link TLS :"
 echo -e "$COLOR1│${NC} ${vlesslink1}" 
@@ -318,8 +318,21 @@ echo "" | tee -a /etc/log-create-vless.log
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-vless
 }
-
-
+function userlist(){
+pengguna=$(cat /etc/log-create-vless.log)
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│${NC} ${COLBG1}            • DAFTAR PENGGUNA •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1${pengguna}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu
+}
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}             • VLESS PANEL MENU •              ${NC} $COLOR1│$NC"
@@ -342,7 +355,7 @@ case $opt in
 02 | 2) clear ; renewvless ;;
 03 | 3) clear ; delvless ;;
 04 | 4) clear ; cekvless ;;
-05 | 5) clear ; cat /etc/log-create-vless.log ; exit ;;
+05 | 5) clear ; userlist ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-vless ;;
 esac
