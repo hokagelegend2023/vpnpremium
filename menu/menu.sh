@@ -307,7 +307,7 @@ echo -e ""
 echo -ne " Select menu : "; read opt
 case $opt in
 01 | 1) clear ; m-sshovpn ;;
-02 | 2) clear ; m-vmess ;;
+02 | 2) clear ; menu-vmess ;;
 03 | 3) clear ; m-vless ;;
 04 | 4) clear ; add-tr ;;
 05 | 5) clear ; m-ssws ;;
