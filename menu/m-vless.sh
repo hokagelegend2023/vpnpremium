@@ -28,7 +28,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ijinpremium/main/ijin | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -45,7 +45,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ijinpremium/main/ijin | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ipmini/main/ijin | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -116,7 +116,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-vless
+m-vless
 }
 
 function renewvless(){
@@ -134,7 +134,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-vless
+m-vless
 fi
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -151,7 +151,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1───────────────────────────────────────────────────${NC}"
 read -rp "   Input Username : " user
 if [ -z $user ]; then
-menu-vless
+m-vless
 else
 read -p "   Expired (days): " masaaktif
 if [ -z $masaaktif ]; then
@@ -182,7 +182,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-vless
+m-vless
 fi
 }
 
@@ -201,7 +201,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-vless
+m-vless
 fi
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -215,7 +215,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1───────────────────────────────────────────────────${NC}"
 read -rp "   Input Username : " user
 if [ -z $user ]; then
-menu-vless
+m-vless
 else
 exp=$(grep -wE "^#& $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
 sed -i "/^#& $user $exp/,/^},{/d" /etc/xray/config.json
@@ -235,7 +235,7 @@ echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1�
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-vless
+m-vless
 fi
 }
 
@@ -280,26 +280,26 @@ sed -i '/#vless$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#& '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-vlesslink1="vless://${uuid}@${domain}:$tls?path=/vlessws&security=tls&encryption=none&type=ws#${user}"
-vlesslink2="vless://${uuid}@${domain}:$none?path=/vlessws&encryption=none&type=ws#${user}"
-vlesslink3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
+vlesslink1="vless://${uuid}@${domain}:443?path=/vlessws&security=tls&encryption=none&type=ws#${user}"
+vlesslink2="vless://${uuid}@${domain}:80?path=/vlessws&encryption=none&type=ws#${user}"
+vlesslink3="vless://${uuid}@${domain}:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=bug.com#${user}"
 systemctl restart xray
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}            • CREATE VLESS USER •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} Remarks       : ${user}" 
-echo -e "$COLOR1│${NC} Expired On    : $exp" 
-echo -e "$COLOR1│${NC} Domain        : ${domain}" 
+echo -e "$COLOR1│${NC} Remarks       : ${user}" | tee -a /etc/log-create-vless.log 
+echo -e "$COLOR1│${NC} Expired On    : $exp" | tee -a /etc/log-create-vless.log
+echo -e "$COLOR1│${NC} Domain        : ${domain}" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1│${NC} port TLS      : $tls" 
 echo -e "$COLOR1│${NC} port none TLS : $none" 
-echo -e "$COLOR1│${NC} id            : ${uuid}"
+echo -e "$COLOR1│${NC} id            : ${uuid}"| tee -a /etc/log-create-vless.log
 echo -e "$COLOR1│${NC} Encryption    : none" 
 echo -e "$COLOR1│${NC} Network       : ws" 
-echo -e "$COLOR1│${NC} Path          : /vless" 
+echo -e "$COLOR1│${NC} Path          : /vless" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1│${NC} Path WSS      : wss://who.int/vless" 
-echo -e "$COLOR1│${NC} Path          : vless-grpc" 
+echo -e "$COLOR1│${NC} Path          : vless-grpc" | tee -a /etc/log-create-vless.log
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} Link TLS :"
@@ -312,11 +312,11 @@ echo -e "$COLOR1│${NC} Link GRPC : "
 echo -e "$COLOR1│${NC} ${vlesslink3}" 
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • BONDOWOSO VPN STORE •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE VPN STORE •              $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo "" 
+echo "" | tee -a /etc/log-create-vless.log
 read -n 1 -s -r -p "   Press any key to back on menu"
-menu-vless
+m-vless
 }
 
 
@@ -325,13 +325,14 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}             • VLESS PANEL MENU •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD VLESS      ${COLOR1}[03]${NC} • DELETE VLESS${NC}   $COLOR1│$NC"
-echo -e " $COLOR1│$NC   ${COLOR1}[02]${NC} • RENEW VLESS${NC}    ${COLOR1}[04]${NC} • USER ONLINE    $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD VLESS      ${COLOR1}[04]${NC} • USER ONLINE${NC}    $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[02]${NC} • RENEW VLESS${NC}    ${COLOR1}[05]${NC} • USER LIST      $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[03]${NC} • DELL VLESS${NC}                           $COLOR1│$NC"
 echo -e " $COLOR1│$NC                                              ${NC} $COLOR1│$NC"
 echo -e " $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                  $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
@@ -341,8 +342,9 @@ case $opt in
 02 | 2) clear ; renewvless ;;
 03 | 3) clear ; delvless ;;
 04 | 4) clear ; cekvless ;;
+05 | 5) clear ; cat /etc/log-create-vless.log ; exit ;;
 00 | 0) clear ; menu ;;
-*) clear ; menu-vless ;;
+*) clear ; m-vless ;;
 esac
 
        
