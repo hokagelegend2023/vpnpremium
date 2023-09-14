@@ -203,7 +203,7 @@ wget -q -O /root/vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/
 sleep 2
 ./vpnpremium
 sleep 5
-rm /root/alpha3-update
+rm /root/vpnpremium
 rm /opt/.ver
 version_up=$(curl -sS https://raw.githubusercontent.com/hokagelegend2023/ijinpremium/main/versi)
 echo "$version_up" > /opt/.ver
