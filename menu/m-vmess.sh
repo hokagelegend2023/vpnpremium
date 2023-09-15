@@ -346,21 +346,21 @@ clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}            • CREATE VMESS USER •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}" | tee -a /etc/log-create-vless.log
-echo -e "$COLOR1│${NC} Remarks       : ${user}"                           | tee -a /etc/log-create-vless.log
-echo -e "$COLOR1│${NC} Expired On    : $exp"                              | tee -a /etc/log-create-vless.log
-echo -e "$COLOR1│${NC} Domain        : ${domain}"                         | tee -a /etc/log-create-vless.log
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"  | tee -a /etc/log-create-vmess.log
+echo -e "$COLOR1│${NC} Remarks       : ${user}"                            | tee -a /etc/log-create-vmess.log
+echo -e "$COLOR1│${NC} Expired On    : $exp"                               | tee -a /etc/log-create-vmess.log
+echo -e "$COLOR1│${NC} Domain        : ${domain}"                          | tee -a /etc/log-create-vmess.log
 echo -e "$COLOR1│${NC} Port TLS      : ${tls}" 
 echo -e "$COLOR1│${NC} Port none TLS : ${none}" 
 echo -e "$COLOR1│${NC} Port  GRPC    : ${tls}" 
-echo -e "$COLOR1│${NC} id            : ${uuid}"                            | tee -a /etc/log-create-vless.log
+echo -e "$COLOR1│${NC} id            : ${uuid}"                            | tee -a /etc/log-create-vmess.log
 echo -e "$COLOR1│${NC} alterId       : 0" 
 echo -e "$COLOR1│${NC} Security      : auto" 
 echo -e "$COLOR1│${NC} Network       : ws" 
-echo -e "$COLOR1│${NC} Path          : /vmess"                             | tee -a /etc/log-create-vless.log
-echo -e "$COLOR1│${NC} Path WSS      : wss://who.int/vmess"                | tee -a /etc/log-create-vless.log
+echo -e "$COLOR1│${NC} Path          : /vmess"                             | tee -a /etc/log-create-vmess.log
+echo -e "$COLOR1│${NC} Path WSS      : wss://who.int/vmess"                | tee -a /etc/log-create-vmess.log
 echo -e "$COLOR1│${NC} ServiceName   : vmess-grpc" 
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"   | tee -a /etc/log-create-vless.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"  | tee -a /etc/log-create-vmess.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} Link TLS : "
 echo -e "$COLOR1│${NC} ${vmesslink1}" 
@@ -374,7 +374,7 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo "" | tee -a /etc/log-create-vless.log
+echo "" | tee -a /etc/log-create-vmess.log
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-vmess
 }
