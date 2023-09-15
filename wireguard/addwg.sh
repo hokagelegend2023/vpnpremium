@@ -30,7 +30,7 @@ SERVER_PUB_IP=$(wget -qO- ipinfo.io/ip);
 else
 SERVER_PUB_IP=$IP
 fi
-source /var/lib/crot/ipvps.conf
+source /var/lib/hokagevpn-pro/ipvps.conf
 if [[ "$IP2" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
