@@ -13,7 +13,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl ipinfo.io/ip | grep $MYIP )
+IZIN=$( curl -sS ipv4.icanhazip.com | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -26,7 +26,7 @@ clear
 source /etc/wireguard/params
 source /var/lib/hokagevpn-pro/ipvps.conf
 if [[ "$IP" = "" ]]; then
-SERVER_PUB_IP=$(wget -qO- ipinfo.io/ip);
+SERVER_PUB_IP=$(curl -sS ipv4.icanhazip.com);
 else
 SERVER_PUB_IP=$IP
 fi
@@ -63,7 +63,7 @@ fi
 CLIENT_DNS_1="8.8.8.8"
 
 CLIENT_DNS_2="8.8.4.4"
-MYIP=$(wget -qO- ifconfig.co);
+MYIP=$(curl -sS ipv4.icanhazip.com);
 read -p "Expired (Days) : " masaaktif
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
@@ -110,7 +110,7 @@ echo -e "Port     : $portwg"
 echo -e "Created  : $hariini"
 echo -e "Expired  : $exp"
 echo -e "======================="
-echo -e "Link WG  : http://$MYIP:89/$CLIENT_NAME.conf"
+echo -e "Link WG  : http://$MYIP:86/$CLIENT_NAME.conf"
 echo -e "======================="
 echo -e "Script By Hokage Legend"
 rm -f /root/wg0-client-$CLIENT_NAME.conf
