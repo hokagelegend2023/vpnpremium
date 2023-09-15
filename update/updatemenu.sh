@@ -29,10 +29,8 @@ chmod +x info
 chmod +x vpnpremium
 chmod +x menu
 chmod +x menutheme
-chmod +x menuinfo
 chmod +x running
 chmod +x updatemenu
-chmod +x setmenu
 chmod +x add-tr
 
 #install-sldns
