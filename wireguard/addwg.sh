@@ -1,5 +1,4 @@
 #!/bin/bash
-# SL
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -25,7 +24,7 @@ fi
 clear
 # Load params
 source /etc/wireguard/params
-source /var/lib/crot/ipvps.conf
+source /var/lib/hokagevpn-pro/ipvps.conf
 if [[ "$IP" = "" ]]; then
 SERVER_PUB_IP=$(wget -qO- ipinfo.io/ip);
 else
