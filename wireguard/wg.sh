@@ -111,11 +111,9 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O addwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/wiregurad/addwg.sh"
-wget -O delwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/wiregurad/delwg.sh"
-wget -O renewwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremim/main/wiregurad/renewwg.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/wgmenu.sh"
-chmod +x wgmenu
+wget -O addwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/addwg.sh"
+wget -O delwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/delwg.sh"
+wget -O renewwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/renewwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
