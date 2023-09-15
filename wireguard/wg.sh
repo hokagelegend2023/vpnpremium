@@ -114,6 +114,9 @@ cd /usr/bin
 wget -O addwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/addwg.sh"
 wget -O delwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/delwg.sh"
 wget -O renewwg "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/wireguard/renewwg.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/wgmenu.sh"
+
+chmod +x wgmenu
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
