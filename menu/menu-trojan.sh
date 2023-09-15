@@ -292,16 +292,16 @@ clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}           • CREATE TROJAN USER •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-echo -e "$COLOR1│${NC} Remarks     : ${user}" 
-echo -e "$COLOR1│${NC} Expired On  : $exp" 
-echo -e "$COLOR1│${NC} Host/IP     : ${domain}" 
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"      | tee -a /etc/log-create-trojan.log
+echo -e "$COLOR1│${NC} Remarks     : ${user}"                                  | tee -a /etc/log-create-trojan.log
+echo -e "$COLOR1│${NC} Expired On  : $exp"                                     | tee -a /etc/log-create-trojan.log
+echo -e "$COLOR1│${NC} Host/IP     : ${domain}"                                | tee -a /etc/log-create-trojan.log
 echo -e "$COLOR1│${NC} Port        : 443,80" 
-echo -e "$COLOR1│${NC} Key         : ${uuid}" 
+echo -e "$COLOR1│${NC} Key         : ${uuid}"                                  | tee -a /etc/log-create-trojan.log
 echo -e "$COLOR1│${NC} Path        : /trojan-ws"
 echo -e "$COLOR1│${NC} Path WSS    : wss://who.int/trojan-ws" 
-echo -e "$COLOR1│${NC} ServiceName : trojan-grpc" 
-echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1│${NC} ServiceName : trojan-grpc"                              | tee -a /etc/log-create-trojan.log
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"      | tee -a /etc/log-create-trojan.log
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} Link WS : "
 echo -e "$COLOR1│${NC} ${trojanlink}" 
@@ -312,11 +312,25 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
-echo "" 
+echo ""  | tee -a /etc/log-create-trojan.log
 read -n 1 -s -r -p "   Press any key to back on menu"
 add-tr
 }
-
+function userlist(){
+pengguna=$(cat /etc/log-create-trojan.log)
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│${NC} ${COLBG1}            • DAFTAR PENGGUNA •              ${NC} $COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1${pengguna}"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
+echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu
+}
 
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -325,11 +339,11 @@ echo -e "$COLOR1└────────────────────�
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD TROJAN    ${COLOR1}[03]${NC} • DELETE TROJAN${NC}   $COLOR1│$NC"
 echo -e " $COLOR1│$NC   ${COLOR1}[02]${NC} • RENEW TROJAN${NC}  ${COLOR1}[04]${NC} • USER ONLINE     $COLOR1│$NC"
-echo -e " $COLOR1│$NC                                              ${NC} $COLOR1│$NC"
+echo -e " $COLOR1│$NC   ${COLOR1}[05]${NC} • USER LIST                            ${NC} $COLOR1│$NC"
 echo -e " $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •            $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                  $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
@@ -339,8 +353,7 @@ case $opt in
 02 | 2) clear ; renewtrojan ;;
 03 | 3) clear ; deltrojan ;;
 04 | 4) clear ; cektrojan ;;
+05 | 5) clear ; userlist ;;
 00 | 0) clear ; menu ;;
-*) clear ; menu-trojan ;;
+*) clear ; add-tr ;;
 esac
-
-       
