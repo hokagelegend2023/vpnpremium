@@ -1,7 +1,7 @@
 =============================================
       HOKAGE LEGEND VPN PREMIUM                    
       SCRYPT VPS PREMIUM UPDATE                    
------------------------------------------------
+------------------------------------
    >>> Service & Port
    - SlowDNS SSH             : ALL Port SSH
    - OpenSSH                 : 22, 2253
