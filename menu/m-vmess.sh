@@ -379,7 +379,7 @@ read -n 1 -s -r -p "   Press any key to back on menu"
 m-vmess
 }
 function userlist(){
-pengguna=$(cat /etc/log-create-vless.log)
+pengguna=$(cat /etc/log-create-vmess.log)
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}            • DAFTAR PENGGUNA •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
