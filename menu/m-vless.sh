@@ -318,7 +318,7 @@ echo "" | tee -a /etc/log-create-vless.log
 read -n 1 -s -r -p "   Press any key to back on menu"
 m-vless
 }
-function userlist(){
+function userlistvless(){
 pengguna=$(cat /etc/log-create-vless.log)
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}            • DAFTAR PENGGUNA •              ${NC} $COLOR1│$NC"
@@ -355,7 +355,7 @@ case $opt in
 02 | 2) clear ; renewvless ;;
 03 | 3) clear ; delvless ;;
 04 | 4) clear ; cekvless ;;
-05 | 5) clear ; userlist ;;
+05 | 5) clear ; userlistvless ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-vless ;;
 esac
