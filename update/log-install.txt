@@ -1,6 +1,5 @@
-=============================================
-      HOKAGE LEGEND VPN PREMIUM                    
-      SCRYPT VPS PREMIUM UPDATE                    
+HOKAGE LEGEND VPN PREMIUM                    
+SCRYPT VPS PREMIUM UPDATE                    
 ------------------------------------
    >>> Service & Port
    - SlowDNS SSH             : ALL Port SSH
@@ -73,4 +72,4 @@
 ===================Contact==================
 -----------------HOKAGE LEGEND---------------
 ---------------Whatsapp : 087726917005-----------
-===================================================
+
