@@ -24,7 +24,13 @@ wget -O l2tpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/
 wget -O pptpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/pptpmenu.sh"
 wget -O sstpmenu "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/sstpmenu.sh"
 wget -O add-tr "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/menu-trojan.sh"
+wget -O m-vmess "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/m-vmess.sh"
+wget -O m-vless "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/m-vless"
+wget -O m-sshovpn "https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/menu/m-sshovpn.sh"
 
+chmod +x m-vless
+chmod +x m-vmess
+chmod +x m-sshovpn
 chmod +x info
 chmod +x vpnpremium
 chmod +x menu
