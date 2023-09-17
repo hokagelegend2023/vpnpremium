@@ -293,6 +293,12 @@ clear
 wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/update/updatemenu.sh && chmod +x updatemenu.sh && ./updatemenu.sh
 rm updatemenu.sh
 clear
+cd /usr/bin/
+wget -O vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium.sh"
+sleep 2
+chmod +x vpnpremium
+sleep 2
+cd
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
 
