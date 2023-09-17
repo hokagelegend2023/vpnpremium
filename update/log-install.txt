@@ -1,21 +1,21 @@
-HOKAGE LEGEND VPN PREMIUM                    
-SCRYPT VPS PREMIUM UPDATE                    
-------------------------------------
+
+      HOKAGE LEGEND VPN PREMIUM                    
+      SCRYPT VPS PREMIUM UPDATE                    
+-------------------------------------------------------
    >>> Service & Port
    - SlowDNS SSH             : ALL Port SSH
-   - OpenSSH                 : 22, 2253
+   - OpenSSH                 : 22, 80,
    - OpenVPN                 : TCP 1194
    - OpenVPN                 : SSL  990
    - OpenVPN                 : UDP  2200
    - Stunnel5                : 443, 445
-   - Dropbear                : 443, 109, 143
+   - Dropbear                : 443, 109, 143, 8282,
    - CloudFront Websocket    : [OFF]
-   - SSH Websocket TLS       : 443
-   - SSH Websocket HTTP      : 8880
-   - Websocket OpenVPN       : 2086
+   - SSH Websocket           : 443, 80, [ON]
+   - Websocket OpenVPN       : 2086, 80
    - Squid Proxy             : 3128, 8080
    - Badvpn                  : 7100, 7200, 7300
-   - Nginx                   : 89
+   - Nginx                   : 86
    - Wireguard               : 7070
    - L2TP/IPSEC VPN          : 1701
    - PPTP VPN                : 1732
@@ -31,19 +31,15 @@ SCRYPT VPS PREMIUM UPDATE
    - XRAYS VMESS GRPC        : 1180
    - XRAYS VLESS GRPC        : 2280
    - OHP SSH                 : 8181
-   - OHP Dropbear            : 8282
    - OHP OpenVPN             : 8383
    - TrojanGo                : 2087
-   - OpenSSH                  : 22
-   - SSH Websocket            : 80
    - SSH SSL Websocket        : 443
    - Stunnel4                 : 222, 777
-   - Dropbear                 : 109, 143
    - Badvpn                   : 7100-7900
-   - Nginx                    : 81
    - Vmess WS TLS             : 443
    - Vless WS TLS             : 443
    - Trojan WS TLS            : 443
+    - Trojan WS Non-TLS       : 80
    - Shadowsocks WS TLS       : 443
    - Vmess WS none TLS        : 80
    - Vless WS none TLS        : 80
@@ -52,6 +48,7 @@ SCRYPT VPS PREMIUM UPDATE
    - Vmess gRPC               : 443
    - Vless gRPC               : 443
    - Trojan gRPC              : 443
+   - Trojan gRPC              : 80
    - Shadowsocks gRPC         : 443
 
    >>> Server Information & Other Features
@@ -69,7 +66,7 @@ SCRYPT VPS PREMIUM UPDATE
    - White Label
    - Installation Log --> /root/log-install.txt
 
-===================Contact==================
------------------HOKAGE LEGEND---------------
----------------Whatsapp : 087726917005-----------
-
+===================Contact================
+-----------------HOKAGE LEGEND------------
+---------------Whatsapp : 087726917005----
+-----------------------------------------
