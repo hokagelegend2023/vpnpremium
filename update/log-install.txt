@@ -64,7 +64,6 @@
    - Auto Delete Expired Account
    - Full Orders For Various Services
    - White Label
-   - Installation Log --> /root/log-install.txt
 
 ===================Contact================
 -----------------HOKAGE LEGEND------------
