@@ -28,8 +28,11 @@
 
 ```
 Ketikan :
+
 cd /usr/bin/
+
 wget -O vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium.sh"
+
 chmod +x vpnpremium
 
 setlah itu lakukan update dari menu update
