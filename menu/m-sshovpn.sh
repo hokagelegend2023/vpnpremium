@@ -135,6 +135,7 @@ m-sshovpn
 fi
 
 IP=$(curl -sS ifconfig.me);
+slkey=$(cat /etc/slowdns/server.pub);
 ossl=`cat /root/log-install.txt | grep -w "OpenVPN" | cut -f2 -d: | awk '{print $6}'`
 opensh=`cat /root/log-install.txt | grep -w "OpenSSH" | cut -f2 -d: | awk '{print $1}'`
 db=`cat /root/log-install.txt | grep -w "Dropbear" | cut -f2 -d: | awk '{print $1,$2}'`
@@ -142,6 +143,7 @@ ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
 sqd="$(cat ~/log-install.txt | grep -w "Squid" | cut -d: -f2)"
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+
 
 OhpSSH=`cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}'`
 OhpDB=`cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}'`
@@ -172,6 +174,8 @@ echo -e "$COLOR1│$NC  SSH-WS     : $portsshws"
 echo -e "$COLOR1│$NC  SSH-SSL-WS : $wsssl" 
 echo -e "$COLOR1│$NC  SSL/TLS    :$ssl" 
 echo -e "$COLOR1│$NC  UDPGW      : 7100-7300" 
+echo -e "$COLOR1│$NC  Pubkey     : $slkey"
+echo -e "$COLOR1│$NC  $domen:1-65350@$Login:$Pass"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "    GET wss://who.int/ HTTP/1.1[crlf]"
@@ -199,6 +203,10 @@ echo -e "$COLOR1│$NC  SSH-WS     : $portsshws"
 echo -e "$COLOR1│$NC  SSH-SSL-WS : $wsssl" 
 echo -e "$COLOR1│$NC  SSL/TLS    :$ssl" 
 echo -e "$COLOR1│$NC  UDPGW      : 7100-7300" 
+echo -e "$COLOR1│$NC  Pubkey     : $slkey"
+echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1│$NC  $domen:1-65350@$Login:$Pass"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "    GET wss://who.int/ HTTP/1.1[crlf]"
