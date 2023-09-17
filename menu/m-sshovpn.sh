@@ -619,16 +619,18 @@ clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • SSH PANEL MENU •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
-echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}
- $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD SSH         ${COLOR1}[05]${NC} • DELETE SSH${NC}    $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[02]${NC} • TRIAL SSH       ${COLOR1}[06]${NC} • RENEW SSH${NC}     $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[03]${NC} • USER ONLINE     ${COLOR1}[07]${NC} • USERS LIST${NC}    $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[04]${NC} • ENABLE WS                            $COLOR1│$NC
- $COLOR1│$NC                                              ${NC} $COLOR1│$NC
- $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                              $COLOR1│$NC"
-echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}" 
+echo -e " $COLOR1┌────────────────────────────────────────────────────┐${NC}
+ $COLOR1│$NC   ${COLOR1}[01]${NC} • ADD SSH            ${COLOR1}[06]${NC} • DELETE SSH${NC}      $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[02]${NC} • TRIAL SSH          ${COLOR1}[07]${NC} • RENEW SSH${NC}       $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[03]${NC} • USER ONLINE        ${COLOR1}[08]${NC} • USERS LIST${NC}      $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[04]${NC} • ENABLE WS          ${COLOR1}[09]${NC} • AUTO KILL${NC}       $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[05]${NC} • CHECK MULTI LOGIN  ${COLOR1}[10]${NC} • SET LOCK USER${NC}   $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}                          ${COLOR1}[11]${NC} • SET UNLOCK USER${NC} $COLOR1│$NC
+ $COLOR1│$NC   ${COLOR1}[00]${NC} • GO BACK${NC}                                   $COLOR1│$NC"
+ 
+echo -e " $COLOR1└────────────────────────────────────────────────────┘${NC}" 
 echo -e "$COLOR1┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                   $COLOR1│$NC"
+echo -e "$COLOR1│${NC}              • HOKAGE LEGEND •                  $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}" 
 echo -e ""
 read -p " Select menu :  "  opt
@@ -638,9 +640,12 @@ case $opt in
 02 | 2) clear ; trialssh ;;
 03 | 3) clear ; cekssh ;;
 04 | 4) clear ; sshwss ;;
-05 | 5) clear ; delssh ;;
-06 | 6) clear ; renewssh ;;
-07 | 7) clear ; memberssh ;;
+5) clear ; ceklim ; exit ;;
+06 | 6) clear ; delssh ;;
+07 | 7) clear ; renewssh ;;
+08 | 8) clear ; memberssh ;;
+9) clear ; autokill ; exit ;;
+10) clear ; user-lock ; exit ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-sshovpn ;;
 esac
