@@ -646,6 +646,7 @@ case $opt in
 08 | 8) clear ; memberssh ;;
 9) clear ; autokill ; exit ;;
 10) clear ; user-lock ; exit ;;
+11) clear ; user-unlock ; exit ;;
 00 | 0) clear ; menu ;;
 *) clear ; m-sshovpn ;;
 esac
