@@ -294,7 +294,7 @@ wget https://raw.githubusercontent.com/hokagelegend2023/vpnpremium/main/update/u
 rm updatemenu.sh
 clear
 cd /usr/bin/
-wget -O vpnpremium "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium.sh"
+wget https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium.sh && chmod +x vpnpremium.sh && ./vpnpremium.sh
 sleep 2
 chmod +x vpnpremium
 sleep 2
