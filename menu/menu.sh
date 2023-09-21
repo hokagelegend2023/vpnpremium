@@ -199,9 +199,9 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/vpnpremium.sh "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium,sg" && chmod +x /root/vpnpremium.sh
+wget -q -O /root/vpnpremium.sh "https://raw.githubusercontent.com/hokagelegend2023/update/main/vpnpremium.sh" && chmod +x /root/vpnpremium.sh
 sleep 2
-./vpnpremium,sh
+./vpnpremium.sh
 sleep 5
 rm /root/vpnpremium
 rm /opt/.ver
