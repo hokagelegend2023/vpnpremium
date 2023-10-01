@@ -165,10 +165,7 @@ echo "$pp" > /etc/xray/scdomain
 echo "$pp" > /etc/v2ray/domain
 echo "IP=" >> /var/lib/hokage/ipvps.conf
 echo "IP=$pp" > /var/lib/hokagevpn-pro/ipvps.conf
-cd
-#delete directory
-rm -rf /root/nsdomain
-rm nsdomain
+
 
 #THEME RED
 cat <<EOF>> /etc/hokagevpn/theme/red
