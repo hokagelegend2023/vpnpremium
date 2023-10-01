@@ -81,9 +81,6 @@ setlah itu lakukan update dari menu update
 
 
 # SCYPT UNTUK AUTO INSTALL VPS UBUNTU & DEBIAN
-- Step 1 for (debian) please update first
-```
-apt update && apt upgrade -y && reboot
 ```
 - Step 2 for (ubuntu) directly install
 ```
